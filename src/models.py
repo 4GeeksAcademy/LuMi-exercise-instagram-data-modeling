@@ -28,6 +28,7 @@ class Comment(Base):
     id = Column(Integer, primary_key=True)
     author_id = Column(Integer, ForeignKey('user.id'))
     post_id =  Column(Integer, ForeignKey('post.id'))
+    comment_text = Column(String(250), nullable = False)
 
 class Media(Base):
     __tablename__ = 'media'
@@ -42,6 +43,8 @@ class Follower(Base):
 
     user_from_id = Column(Integer, primary_key=True)
     user_to_id = Column(Integer, ForeignKey('user.id'))
+
+    
 
     
 
